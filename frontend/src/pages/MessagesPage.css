@@ -1,0 +1,231 @@
+body {
+  background-color: #f4fcff;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.messages-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--header-height);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Add this to center the title and elements inside */
+}
+
+.page-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 auto; /* Add auto margins horizontally */
+  text-shadow: none;
+  position: relative;
+  text-align: center; /* Ensure text is centered */
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem; /* Adjusted to be closer to the title */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  border-radius: 2px;
+}
+
+.conversations-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.conversation-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: 
+    "avatar name time"
+    "avatar preview preview";
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.conversation-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.1);
+}
+
+.conversation-card.unread {
+  background: #f0f9ff;
+  border-left: 4px solid #2563eb;
+}
+
+.avatar-container {
+  grid-area: avatar;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #059669;
+  border: 2px solid #fff;
+}
+
+.conversation-info {
+  grid-area: name;
+  min-width: 0; /* Allows text truncation to work */
+}
+
+.conversation-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conversation-time {
+  grid-area: time;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.conversation-preview {
+  grid-area: preview;
+  color: #475569;
+  font-size: 0.9rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 1rem;
+}
+
+.unread-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  min-width: 20px;
+}
+
+.loading-container, .error-container, .empty-container {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.loading-container p, .error-container p, .empty-container p {
+  color: #475569;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.error-container p {
+  color: #dc2626;
+}
+
+.empty-container a {
+  color: #1e3a8a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.empty-container a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 0 1rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .conversations-container {
+    padding: 0 1rem;
+  }
+  
+  .conversation-card {
+    padding: 0.75rem;
+  }
+  
+  .avatar-container {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.75rem;
+  }
+  
+  .conversation-name {
+    font-size: 1rem;
+  }
+  
+  .conversation-time {
+    font-size: 0.8rem;
+  }
+  
+  .conversation-preview {
+    font-size: 0.85rem;
+  }
+}

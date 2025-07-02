@@ -1,0 +1,144 @@
+.footer {
+  background-color: #f0f9ff;
+  border-top: 1px solid rgba(37, 99, 235, 0.1);
+  padding: 5rem 0 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.brand-text {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+.brand-tagline {
+  color: #64748b;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+.footer-title {
+  color: #1e3a8a;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: #334155;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 0.875rem;
+}
+
+.footer-links a:hover {
+  color: #1e3a8a;
+}
+
+.social-icons-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  padding: 0.75rem;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.1);
+  color: #1e3a8a;
+  transition: all 0.2s;
+}
+
+.social-icon:hover {
+  background: #1e3a8a;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  transition: border-color 0.2s;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  background: white;
+}
+
+.newsletter-button {
+  padding: 0.75rem 1.5rem;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.newsletter-button:hover {
+  background: #2563eb;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(37, 99, 235, 0.1);
+  text-align: center;
+  color: #334155;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+}
