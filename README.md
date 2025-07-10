@@ -2,7 +2,6 @@
 
 GiGy is a task marketplace platform with a Node.js/Express backend and MongoDB database.
 
-Live link - http://4.240.88.99/
 ## Features
 
 - User registration and authentication (JWT)
@@ -16,7 +15,7 @@ Live link - http://4.240.88.99/
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/Neeharika2/GiGy.git
+   git clone https://github.com/navya2036/GiGy.git
    cd GiGy
    ```
 
@@ -52,8 +51,14 @@ forntend/
    src/
    .env
 ...
-```  
+```
 
+## My Frontend Contribution to GiGy Task Marketplace
+- Developed responsive user interfaces using React.js, including pages for login, signup, profile, and gig listings.
+- Integrated frontend with backend REST APIs for authentication, gig management, and applications using Axios.
+- Implemented real-time chat functionality using Socket.IO for seamless user communication.
+- Enabled image upload to Cloudinary for user profiles and gig media.
+- Ensured smooth UX with form validation, reusable components, and mobile-friendly layouts.
 
 ## Notes 
 
